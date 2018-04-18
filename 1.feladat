@@ -1,1 +1,7 @@
+l=1
+fibonacciLista=[1]
+for i in range(1,99):
+    fibonacciLista.append(l)
+    l=fibonacciLista[i-1]+fibonacciLista[i]
 
+print(fibonacciLista)
