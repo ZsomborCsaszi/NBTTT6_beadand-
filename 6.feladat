@@ -1,23 +1,45 @@
 import string
-
-
+szoveg3=''
 szoveg2=''
 dict_letters={'A':'. -','B':'- . . .','C':'- . - .','D':'- . .','E':'.','F':'. . - .','G':'- - .','H':'. . . .','I':'. .','J':'. - - -','K':'- . -','L':'. - . .','M':'- -','N':'- .','O':'- - -','P':'. - - .','Q':'- - . -','R':'. - .','S':'. . .','T':'-','U':'. . -','V':'. . . -','W':'. - -','X':'- . . -','Y':'- . - -','Z':'- - . .','.':'. - . - . -',',':'- - . . - -','?':'. . - - . .','/':'- . . - .','@':'. - - . - .','1':'. - - - -','2':'. . - - -','3':'. . . - -','4':'. . . . -','5':'. . . . .','6':'- . . . .','7':'- - . . .','8':'- - - . .','9':'- - - - .','0':'- - - - -'}
 szoveg=input("Adj meg egy szöveget: ")
 for i in szoveg:
     if i=='.' or i=="-":
-        for v in dict_letters.values():
-            print(v)
+        szoveg+= ' '
+
+        decipher = ''
+        citext = ''
+        for letter in szoveg:
+
+            if letter != '   ':
+
+                i = 0
+                citext += ' '
+
+            else:
+                i += 1
+                if i == 2:
+
+                    decipher += ' '
+                else:
+                    decipher += list(dict_letters.keys())[list(dict_letters
+                                                                  .values()).index(citext)]
+                    citext = ''
+
+        print(decipher)
+
+
+
 
     else:
         for k in szoveg:
             szoveg2+=k.upper()
 
         for j in szoveg2:
-            
+
             if j == ' ':
                 print('      ',end=' ')
 
             else:
                 print(dict_letters[j],' ',end=" ")
-
+    break
