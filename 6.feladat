@@ -1,31 +1,32 @@
 import string
+j=0
 szoveg3=''
 szoveg2=''
 dict_letters={'A':'.-','B':'-...','C':'-.-.','D':'-..','E':'.','F':'..-.','G':'--.','H':'....','I':'..','J':'.---','K':'-.-','L':'.-..','M':'--','N':'-.','O':'---','P':'.--.','Q':'--.-','R':'.-.','S':'...','T':'-','U':'..-','V':'...-','W':'.--','X':'-..-','Y':'-.--','Z':'--..','.':'.-.-.-',',':'--..--','?':'..--..','/':'-..-.','@':'.--.-.','1':'.----','2':'. . - - -','3':'. . . - -','4':'. . . . -','5':'. . . . .','6':'- . . . .','7':'- - . . .','8':'- - - . .','9':'- - - - .','0':'- - - - -'}
 szoveg=input("Adj meg egy szöveget: ")
-for i in szoveg:
-    if i=='.' or i=="-":
-        atirt = ''
-        s = ''
-        for letter in szoveg:
 
+if szoveg[0] =='.' or szoveg[0]=="-":
+        szoveg+=' '
+        atirt = ''
+        helptext = ''
+        for letter in szoveg:
             if letter != ' ':
-                i = 0
-                s += letter
+                j = 0
+                helptext += letter
 
             else:
-                i += 1
-                if i == 3:
+                j+=1
+                if j == 2:
                     atirt += ' '
 
-                elif i == 2:
+                else:
                     atirt += list(dict_letters.keys())[list(dict_letters
-                                                                  .values()).index(s)]
-                    s = ''
-
+                                                                  .values()).index(helptext)]
+                    helptext = ''
         print(atirt)
 
-    else:
+
+else:
         for k in szoveg:
             szoveg2+=k.upper()
 
@@ -36,4 +37,3 @@ for i in szoveg:
 
             else:
                 print(dict_letters[j],' ',end=" ")
-    break
