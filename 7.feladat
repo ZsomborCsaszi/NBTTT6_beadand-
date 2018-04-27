@@ -1,0 +1,11 @@
+szoveg=input("szöveg: ")
+szoveg1=szoveg.split(" ")
+forditott=""
+for i in szoveg1:
+    forditott += i[::-1]+" "
+
+
+print(forditott)
+maxLista=[]
+max=0
+
