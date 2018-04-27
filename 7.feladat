@@ -18,7 +18,7 @@ for i in range(1, length):
     left = i - 1
     right = i
 
-    while left >= 0 and right < length and string2[left] == string2[right]:
+    while left >= 0 and right < length and string2[left] == string2[right]:         #páros betűszámú stringek
         if right - left + 1 > maxLength:
             start = left
             maxLength = right - left + 1
@@ -27,7 +27,7 @@ for i in range(1, length):
 
     left = i - 1
     right = i + 1
-    while left >= 0 and right < length and string2[left] == string2[right]:
+    while left >= 0 and right < length and string2[left] == string2[right]:         #páratlan betűszámú stringek
         if right - left + 1 > maxLength:
             start = left
             maxLength = right - left + 1
