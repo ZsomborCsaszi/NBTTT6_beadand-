@@ -5,4 +5,4 @@ def Fibonacci():
         fibonacciList.append(l)
         l=fibonacciList[i-1]+fibonacciList[i]
 
-    print(fibonacciList)
+    return fibonacciList
