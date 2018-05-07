@@ -1,4 +1,4 @@
-string=input("szöveg:")
+string="Indul a görög aludni, már későre jár, indul a kutya s a tyúk aludni vele együtt.
 string2=""         #space nélküli string
 maxLength = 1
 
