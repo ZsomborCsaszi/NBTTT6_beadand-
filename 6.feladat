@@ -1,39 +1,39 @@
 import string
-j=0
-szoveg3=''
+
+morseEr=''
+szovegMorse=[]
 szoveg2=''
 dict_letters={'A':'.-','B':'-...','C':'-.-.','D':'-..','E':'.','F':'..-.','G':'--.','H':'....','I':'..','J':'.---','K':'-.-','L':'.-..','M':'--','N':'-.','O':'---','P':'.--.','Q':'--.-','R':'.-.','S':'...','T':'-','U':'..-','V':'...-','W':'.--','X':'-..-','Y':'-.--','Z':'--..','.':'.-.-.-',',':'--..--','?':'..--..','/':'-..-.','@':'.--.-.','1':'.----','2':'. . - - -','3':'. . . - -','4':'. . . . -','5':'. . . . .','6':'- . . . .','7':'- - . . .','8':'- - - . .','9':'- - - - .','0':'- - - - -'}
-szoveg=input("Adj meg egy szöveget: ")
+dict_morse=  {'.-':'A','-...':'B','-.-.':'C','-..':'D','.':'E','..-.':'F','--.':'G','....':'H','..':'I','.---':'J','-.-':'K','.-..':'L','--':'M','-.':'N','---':'O','.--.':'P','--.-':'Q','.-.':'R','...':'S','-':'T','..-':'U','...-':'V','.--':'W','-..-':'X','-.--':'Y','--..':'Z'}
+szoveg="This is my homework about Morse Code"
+morse="-   ....   ..   ...          ..   ...          --   -.--          ....   ---   --   .   .--   ---   .-.   -.-          .-   -...   ---   ..-   -          --   ---   .-.   ...   .          -.-.   ---   -..   . "
 
-if szoveg[0] =='.' or szoveg[0]=="-":
-        szoveg+=' '
-        atirt = ''
-        helptext = ''
-        for letter in szoveg:
-            if letter != ' ':
-                j = 0
-                helptext += letter
-
-            else:
-                j+=1
-                if j == 2:
-                    atirt += ' '
-
-                else:
-                    atirt += list(dict_letters.keys())[list(dict_letters
-                                                                  .values()).index(helptext)]
-                    helptext = ''
-        print(atirt)
+ures=""
+l=0
+szamlalo=0
+for i in morse:
+    if i != " ":
+        ures+=i
+        l=0
+    elif i == " ":
+        if len(ures) != 0:
+            szovegMorse.append(ures)
+            morseEr+=dict_morse[szovegMorse[szamlalo]]
+            szamlalo+=1
+        ures=''
+        l+=1
+        if l == 7:
+            morseEr+=" "
+print(morseEr)
 
 
-else:
-        for k in szoveg:
-            szoveg2+=k.upper()
+for k in szoveg:
+    szoveg2+=k.upper()
 
-        for j in szoveg2:
+for j in szoveg2:
 
-            if j == ' ':
-                print('      ',end=' ')
+    if j == ' ':
+        print('      ',end=' ')
 
-            else:
-                print(dict_letters[j],' ',end=" ")
+    else:
+        print(dict_letters[j],' ',end=" ")
