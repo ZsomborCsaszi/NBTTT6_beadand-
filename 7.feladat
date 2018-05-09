@@ -1,4 +1,5 @@
-string="Indul a görög aludni, már későre jár, indul a kutya s a tyúk aludni vele együtt.
+import string
+string1="Indul a gorog aludni. Eva, can I see bees in a cave? Egyszer volt hol nem volt. Was it a cat I saw?!"
 string2=""         #space nélküli string
 maxLength = 1
 
@@ -6,8 +7,9 @@ start = 0
 
 left = 0
 right = 0
-for i in string:        #space eltávolítása, kivédi a space miatt meghosszabodott substringeket
-    if i == " ":
+for i in string1:        #space eltávolítása, kivédi a space miatt meghosszabodott substringeket
+    i=i.lower()
+    if i == " " or i in string.punctuation:
         continue
     string2+=i
 
@@ -35,5 +37,6 @@ for i in range(1, length):
         right += 1
 
 print("This is the longest palindromic substring:",string2[start:start + maxLength])    #start indextől a start + maxLength indexig
+print("The length of a longest palindromic substring is:",maxLength)
 
 
